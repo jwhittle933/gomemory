@@ -16,7 +16,8 @@ func PrintMem() {
 
 	runtime.ReadMemStats(&ms)
 
-	fmt.Fprintln(w, BtoMB(ms.Alloc),
+	fmt.Fprintln(w,
+		fmt.Sprintf("%v MiB\t", BtoMB(ms.Alloc)),
 		fmt.Sprintf("%v MiB\t", BtoMB(ms.TotalAlloc)),
 		fmt.Sprintf("%v MiB\t", BtoMB(ms.Sys)),
 		fmt.Sprintf("%v MiB\t", BtoMB(ms.Mallocs)),
